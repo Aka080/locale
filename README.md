@@ -24,4 +24,8 @@ https://locale-akash.netlify.app/
   - https://github.com/Aka080/locale/blob/main/src/images/user_abv_age.png
 
 
+### Thoughts what can be improved
 
+  - Responsiveness of the design.
+  - Give ability to filter out age on top of already queried data.
+  - Maybe ability to see how numbers have changed after last scan. 
