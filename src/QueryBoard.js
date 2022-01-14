@@ -10,7 +10,7 @@ import Divider  from '@mui/material/Divider';
 const QueryBoard = ()=>{
   return <Box>
       <Grid container >
-        <Grid item  xs={4}>
+        <Grid item >
           <Box sx={{background:'#6867AC', paddingTop:'10px', borderRadius:'10px'}}>
           <Typography variant="h3" component="h2" align='center' sx={{color:'white', fontWeight:600, fontFamily:'Vidaloka, serif'}}>
             Visualize
@@ -19,13 +19,13 @@ const QueryBoard = ()=>{
           
            <Divider />
         </Grid>
-          <Grid item xs={4}>
+          <Grid item >
             <Box marginTop='20px'>
               <QueryItems/>
             </Box>
               
           </Grid>
-        <Grid item xs={4}>
+        <Grid item >
           <MapScale/>
         </Grid>
       </Grid>
