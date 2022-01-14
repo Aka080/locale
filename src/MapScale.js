@@ -80,7 +80,10 @@ const MapScale = () => {
                 return  <Box marginBottom='10px'>
                     <Grid container >
                 <Grid item xs={6}>
-                    {scale.low} - {scale.high}
+                  <Box display='flex' justifyContent={'center'}>
+                  {scale.low} - {scale.high}
+                  </Box>
+                    
                 </Grid>
                 <Grid item xs={6}>
                     <Box width='100%' height='50px' bgcolor={scale.color_code}/>

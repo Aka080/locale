@@ -6,7 +6,7 @@ import Map from "./Map";
 function App() {
   return (
     <Box display='flex' justifyContent = 'center' alignItmes ='center'   sx={{background:'#6867AC', height:'100%'}}>
-      <Paper sx={{ width: "95%" ,marginTop:'2%',height:'100%'}}>
+      <Paper sx={{ width: "95%" ,marginTop:'2%',height:'100%',marginBottom:'2%'}}>
         <Dashboard />
       </Paper>
     </Box>

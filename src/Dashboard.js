@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <Box height='100%'>
-    <Box padding='20px' paddingBottom='0px' display = { isDataLoading? 'none': 'block'}>
+    <Box padding='20px'  display = { isDataLoading? 'none': 'block'}>
       <Grid container spacing={2} justifyContent = 'center'>
       <Grid item xs={12} sm={4} >
         <Box >
