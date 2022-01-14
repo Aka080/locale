@@ -20,7 +20,7 @@ const Dashboard = () => {
         </Box>
          
         </Grid>
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={8}>
           <Box style={{  height: "700px", width:'100%',border:"2px solid #6867AC", borderRadius:'10px'}}>
             <Map queryValue ={query}/>
           </Box>
