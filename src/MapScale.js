@@ -59,7 +59,7 @@ const MapScale = () => {
 
     },[queryValue])
   return (
-    (queryValue > 1) && <Paper sx={{width:'95%'}}>
+    (queryValue > 1) && <Paper sx={{width:'95%', padding:'10px'}}>
       <Grid>
         <Grid item>
           <Box padding='5px'>
