@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Dashboard from "./Dashboard";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Map from "./Map";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box display='flex' justifyContent = 'center' alignItmes ='center'   sx={{background:'#6867AC', minHeight:'800px'}}>
+      <Paper sx={{ width: "95%" ,marginTop:'2%'}}>
+        <Dashboard />
+      </Paper>
+    </Box>
   );
 }
 
