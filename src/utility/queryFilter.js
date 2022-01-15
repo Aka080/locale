@@ -30,7 +30,7 @@ export function numberOfMalesInArea(usersInArea,maleUsers){
 }
 export function numberOfFemalesInArea(usersInArea,femaleUsers){
     let total_females = 0;
-    Object.keys(usersInArea).forEach((userId,idIndex)=>{
+    usersInArea && Object.keys(usersInArea).forEach((userId,idIndex)=>{
          if(femaleUsers[userId]){
              total_females += 1
          }
@@ -62,7 +62,7 @@ export function usersAboveAge(usersInArea,userByAge,forAge){
                 const ageInNumber = parseInt(age)
 
 
-                if(ageInNumber !== NaN && ageInNumber){
+                if(!isNaN(ageInNumber) && ageInNumber){
 
                     // check if age is above query age
                     if(ageInNumber>forAge){

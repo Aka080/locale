@@ -3,14 +3,15 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useDispatch } from 'react-redux';
-import { setQueryItem ,setFilterAge} from './store/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setQueryItem ,setFilterAge} from '../store/userSlice';
 import  TextField  from '@mui/material/TextField';
 import  Button  from '@mui/material/Button';
 import { Box } from '@mui/material';
 
-export default function QueryItems() {
+export default function QueryItems({showScale,setShow}) {
     const dispatch = useDispatch()
+  const queryItem = useSelector(state=>state.user_details.queryItem)
   const [queryValue, setQueryValue] = React.useState('');
   const [age,setAge] = React.useState('')
 
@@ -22,11 +23,23 @@ export default function QueryItems() {
   
   };
   const onSubmit = ()=>{
+    setShow(true)
     dispatch(setQueryItem(queryValue))
     console.log('age value',age,queryValue)
     dispatch(setFilterAge(Number(age)))
   }
   React.useEffect(()=>{
+    if(queryValue === queryItem){
+      setShow(true)
+    }
+    if(queryValue !== queryItem){
+      if(showScale){
+        setShow(false)
+        dispatch(setQueryItem(0))
+      }
+
+    }
+
     if((queryValue !== 60) && (queryValue !== 70)){
       if(age){
         setAge('')
@@ -61,7 +74,7 @@ export default function QueryItems() {
         </Select>
       </FormControl>
       <Box minHeight = '60px'>
-     { ((queryValue == 60) || (queryValue == 70)) && <TextField
+     { ((queryValue === 60) || (queryValue === 70)) && <TextField
           id="Age-value"
           label="Enter Age"
           value={age}
@@ -74,7 +87,7 @@ export default function QueryItems() {
       <Button variant="contained"
       
       disabled = {
-        ((queryValue == 60) || (queryValue == 70)) && age<1 
+        ((queryValue === 60) || (queryValue === 70)) && age<1 
       }
       onClick={onSubmit}
       size='large'

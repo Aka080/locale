@@ -18,7 +18,7 @@ const LoadingPop = () => {
           <Typography variant='h4' align='center'>Loading..</Typography>
           <Typography variant="body1" sx={{ marginTop: "20px" ,fontWeight:600,padding:'10px'}}>
             API endpoint has very slow response rate, please wait while data
-            gets loaded, if page becomes unresponsive referesh and try again.
+            gets loaded, if page didn't load referesh and try again.
           </Typography>
         </Paper>
       </Box>

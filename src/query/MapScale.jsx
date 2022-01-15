@@ -6,7 +6,7 @@ import Divider  from '@mui/material/Divider';
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { revenuePerAreaColorCode, malePerAreaColorCode, femalePerAreaColorCode, malePerFemaleColorCode, numberOfUsersPerAreaColorCode,
-ageColorCode  } from "./utility/colorShades";
+ageColorCode  } from "../utility/colorShades";
 
 
 const MapScale = () => {
@@ -59,7 +59,7 @@ const MapScale = () => {
 
     },[queryValue])
   return (
-    (queryValue > 1) && <Paper sx={{width:'95%', padding:'10px'}}>
+    (queryValue > 1) && <Paper sx={{width:'95%', padding:'10px', marginTop:'15px'}}>
       <Grid>
         <Grid item>
           <Box padding='5px'>
@@ -77,7 +77,7 @@ const MapScale = () => {
 
                 {
                 scaleForCurrentQuery.map((scale,scaleIndex)=>{
-                return  <Box marginBottom='10px'>
+                return  <Box marginBottom='10px' key={scale.color_code}>
                     <Grid container >
                 <Grid item xs={6}>
                   <Box display='flex' justifyContent={'center'}>
@@ -85,8 +85,8 @@ const MapScale = () => {
                   </Box>
                     
                 </Grid>
-                <Grid item xs={6}>
-                    <Box width='100%' height='50px' bgcolor={scale.color_code}/>
+                <Grid item xs={6} justifySelf='end'>
+                    <Box width='80%' height='50px' bgcolor={scale.color_code}/>
                 </Grid>
                 </Grid>
                 </Box>

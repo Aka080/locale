@@ -8,11 +8,12 @@ import Divider  from '@mui/material/Divider';
 
 
 const QueryBoard = ()=>{
+  const [showScale,setShowScale] = React.useState(false)
   return <Box>
       <Grid container  >
         <Grid item xs={12} >
           <Box sx={{background:'#6867AC', paddingTop:'10px', borderRadius:'10px'}}>
-          <Typography variant="h3" component="h2" align='center' sx={{color:'white', fontWeight:600, fontFamily:'Vidaloka, serif'}}>
+          <Typography variant="h3" component="h2" align='center' sx={{color:'white', fontWeight:600, fontFamily:'Vidaloka, serif', fontSize:'30px'}}>
             Visualize
            </Typography>;
           </Box>
@@ -21,12 +22,13 @@ const QueryBoard = ()=>{
         </Grid>
           <Grid item xs={12} >
             <Box marginTop='20px'>
-              <QueryItems/>
+              <QueryItems setShow= {setShowScale} showScale={showScale}/>
             </Box>
               
           </Grid>
         <Grid item xs={12}>
-          <MapScale/>
+          
+          { showScale && <MapScale/>}
         </Grid>
       </Grid>
     

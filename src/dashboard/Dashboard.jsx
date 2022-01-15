@@ -2,8 +2,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
 import LoadingPop from "./LoadingPop";
-import Map from "./Map";
-import QueryBoard from "./QueryBoard";
+import Map from "../map/Map";
+import QueryBoard from "../query/QueryBoard";
 import { useSelector } from "react-redux";
 const Dashboard = () => {
     const [query,setQuery] = useState('')
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <Box height='100%'>
-    <Box padding='20px'  display = { isDataLoading? 'none': 'block'}>
+    <Box padding='20px' paddingBottom='0px' display = { isDataLoading? 'none': 'block'}>
       <Grid container spacing={2} justifyContent = 'center'>
       <Grid item xs={12} sm={4} >
         <Box >
